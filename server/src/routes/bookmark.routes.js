@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import * as controller from '../controllers/bookmark.controller.js';
+const router = Router();
+router.get('/', controller.list);
+router.get('/search', controller.list);
+router.get('/:id', controller.getOne);
+router.post('/', controller.create);
+router.put('/:id', controller.update);
+router.delete('/:id', controller.remove);
+router.patch('/:id/favorite', controller.favorite);
+export default router;
